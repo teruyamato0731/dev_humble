@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  ros2:
+    # image: osrf/ros:humble-desktop-full-jammy # gazeboも使用するならfull
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: humble
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      # Working
+      - ./.bashrc:/home/vscode/.bashrc:rw
+      - ../:/workspaces:rw
+      # GUI
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    tty: true
+    command: sleep infinity
+    working_dir: /workspaces
