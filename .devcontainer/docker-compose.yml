@@ -6,7 +6,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: humble
     environment:
       - DISPLAY
       - QT_X11_NO_MITSHM=1
