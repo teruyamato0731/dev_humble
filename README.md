@@ -10,20 +10,19 @@ Ubuntu 22.04で動作確認済み。
 これらのリンクをクリックすると、vscodeが必要に応じてdev container拡張機能を自動的にインストールし、ソースコードをコンテナボリュームにクローンし、使用するためのdev containerを起動する。
 
 # How to use
-使用する際はX11のアクセスコントロールをローカルに対して許可しておく。
+1. 使用する際はX11のアクセスコントロールをローカルに対して許可しておく。
 ```bash
 xhost +local:
 ```
 
-ダウンロードしvscodeで開く。必要であればworkspaceの名前を変更しておく。
+2. GitHub上部の緑の「Use this template」を押し、自身のGitHubアカウントで新規リポジトリを作成。
+3. リポジトリをcloneしvscodeで開く。リポジトリのリンクやディレクトリ名は各自で読み替えること。
 ```bash
 git clone https://github.com/teruyamato0731/dev_humble.git
-# mv dev_humble ${WORK_SPACE_NAME}
 code dev_humble
-# or code ${WORK_SPACE_NAME}
 ```
 
-下記コマンドでuidとgidを調べられるので、必要に応じてダウンロードしてきた[.devcontainer/devcontainer.json](.devcontainer/devcontainer.json) を編集する。
+4. 下記コマンドでuidとgidを調べられるので、必要に応じてダウンロードしてきた[.devcontainer/devcontainer.json](.devcontainer/devcontainer.json) を編集する。
 ```bash
 echo uid:$(id -u) gid:$(id -g)
 # uid:1000 gid:1000
