@@ -11,10 +11,9 @@ services:
       - QT_X11_NO_MITSHM=1
     volumes:
       # Working
-      - ./.bashrc:/home/vscode/.bashrc:cached
-      - ../:/workspaces:cached
+      - ../:/workspaces/${COMPOSE_PROJECT_NAME:?error empty COMPOSE_PROJECT_NAME}:cached
       # GUI
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
     tty: true
     command: sleep infinity
-    working_dir: /workspaces
+    working_dir: /workspaces/${COMPOSE_PROJECT_NAME:?error empty COMPOSE_PROJECT_NAME}

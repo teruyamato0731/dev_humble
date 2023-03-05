@@ -1,10 +1,13 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "humble",
+	"name": "${localWorkspaceFolderBasename}",
+	"remoteEnv": {
+		"COMPOSE_PROJECT_NAME": "${localWorkspaceFolderBasename}"
+	},
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "ros2",
-	"workspaceFolder": "/workspaces",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": "false",
@@ -21,6 +24,7 @@
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
+	"postCreateCommand": "echo \"source /opt/ros/humble/setup.bash\" >> ~/.bashrc",
 	// Configure tool-specific properties.
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
