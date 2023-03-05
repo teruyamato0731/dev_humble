@@ -1,8 +1,13 @@
 # dev_humble
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/library-specification?url=https://github.com/teruyamato0731/dev_humble)
 
 ROS2 humbleのdev container開発環境。
 X11をマウントしてGUIアプリの使用ができるようにしている。
 Ubuntu 22.04で動作確認済み。
+
+# Quick Start
+あなたがすでにVS CodeとDockerをインストールしている場合は、上記のバッジまたは[こちら](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/teruyamato0731/dev_humble)をクリックすることで使用することができる。<br>
+これらのリンクをクリックすると、vscodeが必要に応じてdev container拡張機能を自動的にインストールし、ソースコードをコンテナボリュームにクローンし、使用するためのdev containerを起動する。
 
 # How to use
 使用する際はX11のアクセスコントロールをローカルに対して許可しておく。
@@ -10,7 +15,15 @@ Ubuntu 22.04で動作確認済み。
 xhost +local:
 ```
 
-下記コマンドでuidとgidを調べられるので、必要に応じて [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json) を編集する。
+ダウンロードしvscodeで開く。必要であればworkspaceの名前を変更しておく。
+```bash
+git clone https://github.com/teruyamato0731/dev_humble.git
+# mv dev_humble ${WORK_SPACE_NAME}
+code dev_humble
+# or code ${WORK_SPACE_NAME}
+```
+
+下記コマンドでuidとgidを調べられるので、必要に応じてダウンロードしてきた[.devcontainer/devcontainer.json](.devcontainer/devcontainer.json) を編集する。
 ```bash
 echo uid:$(id -u) gid:$(id -g)
 # uid:1000 gid:1000
