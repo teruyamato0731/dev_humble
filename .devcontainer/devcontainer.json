@@ -1,13 +1,10 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "${localWorkspaceFolderBasename}",
-	"remoteEnv": {
-		"COMPOSE_PROJECT_NAME": "${localWorkspaceFolderBasename}"
-	},
+	"name": "${localEnv:COMPOSE_PROJECT_NAME}",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "ros2",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"workspaceFolder": "/workspaces/${localEnv:COMPOSE_PROJECT_NAME}",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": "false",
