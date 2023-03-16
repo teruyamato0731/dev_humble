@@ -12,13 +12,18 @@ Ubuntu 22.04で動作確認済み。
 # How to use
 1. Docker, vscode, devcontainer拡張機能をインストールする。
 1. GitHub上部の緑の「Use this template」を押し、自身のGitHubアカウントで新規リポジトリを作成。
-1. 自身の作成したリポジトリをcloneする。<br>
-    setup.bashを叩いてsetupを行う。<br>
-    vscodeで開く。<br>
+1. X11のアクセスをローカルに対して許可する。
+    ```bash
+    xhost +local:
+    # non-network local connections being added to access control list
+    ```
+1. 自身の作成したリポジトリをcloneしvscodeで開く。<br>
     リポジトリのリンクやディレクトリ名は各自で読み替えること。
     ```bash
     git clone https://github.com/teruyamato0731/dev_humble.git
-    dev_humble/.devcontainer/setup.bash
     code dev_humble
     ```
 1. 「Reopen in Container」でdevcontainerを開く
+
+# image
+イメージのソースは[こちら。](https://github.com/teruyamato0731/dev_humble_image)
