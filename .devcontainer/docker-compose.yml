@@ -2,10 +2,7 @@ version: "3"
 
 services:
   ros2:
-    # image: osrf/ros:humble-desktop-full-jammy # gazeboも使用するならfull
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/teruyamato0731/dev-humble
     environment:
       - DISPLAY
       - QT_X11_NO_MITSHM=1
