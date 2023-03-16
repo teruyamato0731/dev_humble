@@ -20,6 +20,5 @@ jobs:
       - name: Run make ci-build in dev container
         uses: devcontainers/ci@v0.3
         with:
-          cacheFrom: ghcr.io/teruyamato0731/dev-humble
           push: never
           runCmd: echo $ROS_DISTRO
