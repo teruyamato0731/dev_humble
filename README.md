@@ -24,6 +24,11 @@ Ubuntu 22.04で動作確認済み。
     code dev_humble
     ```
 1. 「Reopen in Container」でdevcontainerを開く
+1. dev_humble を repo name に置換
+    ```bash
+    REPO_NAME=$(basename -s .git $(git remote get-url origin))
+    sed -i -e "s/dev_humble/${REPO_NAME}/" .devcontainer/devcontainer.json .devcontainer/docker-compose.yml
+    ```
 
 # image
 イメージのソースは[こちら。](https://github.com/teruyamato0731/dev_humble_image)
