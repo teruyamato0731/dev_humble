@@ -27,7 +27,7 @@ Ubuntu 22.04で動作確認済み。
 1. dev_humble を repo name に置換
     ```bash
     REPO_NAME=$(basename -s .git $(git remote get-url origin))
-    sed -i -e "s/dev_humble/${REPO_NAME}/" .devcontainer/devcontainer.json .devcontainer/docker-compose.yml
+    sed -i -e "s/dev_humble/${REPO_NAME}/" .devcontainer/devcontainer.json .devcontainer/docker-compose.yml README.md
     ```
 
 # image
