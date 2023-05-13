@@ -13,6 +13,12 @@ services:
       - ../:/workspaces/dev_humble:cached
       # GUI
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # device access
+      - /dev:/dev
     tty: true
     command: sleep infinity
     working_dir: /workspaces/dev_humble
+    # rviz2 起動用
+    ipc: host
+    # device access
+    privileged: true
