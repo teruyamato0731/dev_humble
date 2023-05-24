@@ -24,8 +24,8 @@ jobs:
           set -euxo pipefail
           rm LICENSE .github/workflows/template-cleanup.yml
           mv -f template-README.md README.md
-          sed -i -e "s/dev_humble/${REPO_NAME}/" .devcontainer/devcontainer.json .devcontainer/docker-compose.yml README.md
-          sed -i -e "s/teruyamato0731/${GITHUB_REPOSITORY_OWNER}/" README.md
+          sed -i -e "s/dev_humble/${REPO_NAME}/g" .devcontainer/devcontainer.json .devcontainer/docker-compose.yml README.md
+          sed -i -e "s/teruyamato0731/${GITHUB_REPOSITORY_OWNER}/g" README.md
         env:
           REPO_NAME: ${{ github.event.repository.name }}
 
