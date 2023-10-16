@@ -1,7 +1,14 @@
 # dev_humble
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/teruyamato0731/dev_humble)
+[![ubuntu22][ubuntu22-badge]][ubuntu22]
+[![humble][humble-badge]][humble]
 [![license](https://img.shields.io/github/license/teruyamato0731/dev_humble)](https://github.com/teruyamato0731/dev_humble/blob/main/LICENSE)
 [![CI](https://github.com/teruyamato0731/dev_humble/actions/workflows/main.yml/badge.svg)](https://github.com/teruyamato0731/dev_humble/actions/workflows/main.yml)
+
+[ubuntu22-badge]: https://img.shields.io/badge/-UBUNTU%2022%2E04-blue?style=flat-square&logo=ubuntu&logoColor=white
+[ubuntu22]: https://releases.ubuntu.com/jammy/
+[humble-badge]: https://img.shields.io/badge/-HUMBLE-orange?style=flat-square&logo=ros
+[humble]: https://docs.ros.org/en/humble/index.html
 
 ROS2 humbleのdev container開発環境。
 X11をマウントしてGUIアプリの使用ができるようにしている。
